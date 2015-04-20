@@ -46,3 +46,5 @@ end
 
 gem 'react-rails', '~> 1.0'
 gem "slim-rails"
+gem 'devise'
+gem 'devise_invitable'
