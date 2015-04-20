@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  project_id: 
+  source_title: MyString
+  source_text: MyText
+  rewriten_title: MyString
+  rewriten_text: MyText
+
+two:
+  project_id: 
+  source_title: MyString
+  source_text: MyText
+  rewriten_title: MyString
+  rewriten_text: MyText
