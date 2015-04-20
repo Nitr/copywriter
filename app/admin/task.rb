@@ -7,6 +7,7 @@ ActiveAdmin.register Task do
       f.input :source_text, as: :text
       f.input :rewriten_title, as: :string
       f.input :rewriten_text, as: :text
+      f.input :executer, as: :select, collection: User.pluck(:email, :id)
     end
 
     actions
@@ -15,7 +16,7 @@ ActiveAdmin.register Task do
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
   #
-  permit_params [:project_id, :source_title, :source_text, :rewriten_title, :rewriten_text]
+  permit_params [:project_id, :source_title, :source_text, :rewriten_title, :rewriten_text, :executer_id]
   
   #or
   #

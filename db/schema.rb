@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150420155149) do
+ActiveRecord::Schema.define(version: 20150420162133) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -67,8 +67,10 @@ ActiveRecord::Schema.define(version: 20150420155149) do
     t.text     "rewriten_text"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
+    t.integer  "executer_id"
   end
 
+  add_index "tasks", ["executer_id"], name: "index_tasks_on_executer_id", using: :btree
   add_index "tasks", ["project_id"], name: "index_tasks_on_project_id", using: :btree
 
   create_table "users", force: :cascade do |t|
@@ -102,4 +104,5 @@ ActiveRecord::Schema.define(version: 20150420155149) do
 
   add_foreign_key "projects", "users"
   add_foreign_key "tasks", "projects"
+  add_foreign_key "tasks", "users", column: "executer_id"
 end
